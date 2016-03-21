@@ -1,0 +1,841 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"rumour",
+				"rumour_type_it	forstmt"
+			],
+			[
+				"sub",
+				"subfeature	statement"
+			],
+			[
+				"subtr",
+				"subtree_entities	statement"
+			],
+			[
+				"subtree",
+				"subtree_entities	statement"
+			],
+			[
+				"subtre",
+				"subtree_entities	statement"
+			],
+			[
+				"brown",
+				"brown_tagged	forstmt"
+			],
+			[
+				"rumours",
+				"rumours_sentiment	statement"
+			],
+			[
+				"no",
+				"no_cat_size	statement"
+			],
+			[
+				"rumours_",
+				"rumours_no_categories	statement"
+			],
+			[
+				"_features",
+				"_features_entities	function"
+			],
+			[
+				"get",
+				"get_names_teams	function"
+			],
+			[
+				"nltk",
+				"nltk_input	module"
+			],
+			[
+				"feature",
+				"featuredict	statement"
+			],
+			[
+				"rumo",
+				"rumours_w_feature	statement"
+			],
+			[
+				"testing",
+				"testing_results	statement"
+			],
+			[
+				"train",
+				"train_set	statement"
+			],
+			[
+				"model_extra",
+				"model_extra_revised	statement"
+			],
+			[
+				"ruomurs",
+				"rumours	param"
+			],
+			[
+				"dic",
+				"dictionary	param"
+			],
+			[
+				"saved",
+				"saved_config_file_full_path	statement"
+			],
+			[
+				"pick",
+				"pickle_dictionary	statement"
+			],
+			[
+				"sett",
+				"settings_info	statement"
+			],
+			[
+				"sear",
+				"search_query	statement"
+			],
+			[
+				"scra",
+				"scrapping_enabled	param"
+			],
+			[
+				"analy",
+				"analyzing_enabled	param"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"return",
+				"return_list	statement"
+			],
+			[
+				"al",
+				"all_words	statement"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"transfer",
+				"transfersCombined	statement"
+			],
+			[
+				"transfers",
+				"TransfersCombined	import"
+			],
+			[
+				"arti",
+				"article_count"
+			],
+			[
+				"align",
+				"text-align"
+			],
+			[
+				"dtabase",
+				"database_helper	module"
+			],
+			[
+				"database",
+				"database_helper	module"
+			],
+			[
+				"google",
+				"google_entityid"
+			],
+			[
+				"detailed",
+				"detailedDescription"
+			],
+			[
+				"wiki",
+				"wiki_image_url	statement"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"team_",
+				"team_logo	forstmt"
+			],
+			[
+				"player",
+				"player_last_name	forstmt"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"file_n",
+				"file_number	statement"
+			],
+			[
+				"file",
+				"file_number_delta	statement"
+			],
+			[
+				"max",
+				"max_images	statement"
+			],
+			[
+				"location",
+				"location_print_debug	statement"
+			],
+			[
+				"preious",
+				"previous_longitude	statement"
+			],
+			[
+				"previous",
+				"previous_latitude	param"
+			],
+			[
+				"previ",
+				"previous_longitude	param"
+			],
+			[
+				"lat",
+				"latitude"
+			],
+			[
+				"lon",
+				"longitude	statement"
+			],
+			[
+				"previou",
+				"previous_longitude"
+			],
+			[
+				"prev",
+				"previous_longitude"
+			],
+			[
+				"longtiu",
+				"longitude	param"
+			],
+			[
+				"output",
+				"output_folder"
+			],
+			[
+				"E",
+				"ElementTree"
+			],
+			[
+				"html",
+				"get_bleat_html"
+			],
+			[
+				"unlisten",
+				"unlisten_to_user"
+			],
+			[
+				"listen",
+				"listen_to_users"
+			],
+			[
+				"Listen",
+				"listen_to_user"
+			],
+			[
+				"logged",
+				"logged_in_user"
+			],
+			[
+				"latst",
+				"latest_bleat"
+			],
+			[
+				"logg",
+				"logged_in_user"
+			],
+			[
+				"log",
+				"logged_in_password"
+			],
+			[
+				"head",
+				"header_html"
+			],
+			[
+				"pi",
+				"PI	float"
+			],
+			[
+				"state_gate",
+				"STATE_GATE_SEAT"
+			],
+			[
+				"state",
+				"state_passenger_building"
+			],
+			[
+				"passen",
+				"state_passenger_building"
+			],
+			[
+				"sta",
+				"state_passenger_building"
+			],
+			[
+				"gridCels",
+				"GridCellsX"
+			],
+			[
+				"exit",
+				"exitPath"
+			],
+			[
+				"passenge",
+				"passengerSpot"
+			],
+			[
+				"entry",
+				"entry_database"
+			],
+			[
+				"databa",
+				"entry_database"
+			],
+			[
+				"play",
+				"player_acquired"
+			],
+			[
+				"findNex",
+				"findNextSibling"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "flikr_fetch.py",
+			"settings":
+			{
+				"buffer_size": 612,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/Kulture/ASP.NET.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 367.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Add Repository"
+			],
+			[
+				"omnisharp",
+				"OmniSharpSublime: Show Server Output"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"omnisharpsublime",
+				"OmniSharpSublime: Show Server Output"
+			],
+			[
+				"rebuild",
+				"OmniSharpSublime: Build"
+			],
+			[
+				"reload ",
+				"OmniSharpSublime: Reload Solution"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"reload",
+				"OmniSharpSublime: Reload Solution"
+			],
+			[
+				"omnisharlpsu",
+				"OmniSharpSublime: Reload Solution"
+			],
+			[
+				"package ins",
+				"Package Control: Install Package"
+			],
+			[
+				"list pa",
+				"Package Control: List Packages"
+			],
+			[
+				"list pac",
+				"Package Control: List Packages"
+			],
+			[
+				"discover",
+				"Package Control: Discover Packages"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Discover Packages"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"install theme",
+			"help",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/rubinghv/Prototypes/transfer_website/app/static/bokeh-0.10.0.min.css",
+		"/Users/rubinghv/Prototypes/transfer_website/training/nltk_Input.py",
+		"/Users/rubinghv/Prototypes/transfer_website/.gitignore",
+		"/Users/rubinghv/Prototypes/transfer_website/app/scripts/database_scrapper.py",
+		"/Users/rubinghv/Prototypes/transfer_website/app/scripts/database_google.py",
+		"/Users/rubinghv/Prototypes/transfer_website/training/nltk_test.py",
+		"/Users/rubinghv/Prototypes/transfer_website/app/scripts/database_factory.py",
+		"/Users/rubinghv/Prototypes/transfer_website/app/scripts/database_helper.py",
+		"/Users/rubinghv/Prototypes/transfer_website/app/static/css/bokeh-0.10.0.css",
+		"/Users/rubinghv/Prototypes/transfer_website/app/templates/index_popular_players.html",
+		"/Users/rubinghv/Prototypes/transfer_website/app/templates/base_search.html",
+		"/Users/rubinghv/Prototypes/transfer_website/app/scripts/DAO/transfersDAO.py",
+		"/Users/rubinghv/Prototypes/transfer_website/app/templates/index.html",
+		"/Users/rubinghv/Prototypes/transfer_website/app/templates/index_most_rumoured.html",
+		"/Users/rubinghv/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/rubinghv/Prototypes/transfer_website/app/index_most_rumoured.html",
+		"/Users/rubinghv/Prototypes/transfer_website/app/scripts/playersDAO.py",
+		"/Users/rubinghv/Prototypes/transfer_website/app/scripts/articlesDAO.py",
+		"/Users/rubinghv/Prototypes/transfer_website/app/scripts/teamsDAO.py",
+		"/Users/rubinghv/Prototypes/transfer_website/app/scripts/playerDTO.py",
+		"/Users/rubinghv/Prototypes/transfer_website/app/scripts/transferDTO.py",
+		"/Users/rubinghv/Prototypes/transfer_website/app/scripts/teamDTO.py",
+		"/Users/rubinghv/Prototypes/transfer_website/app/scripts/articleDTO.py",
+		"/Users/rubinghv/Prototypes/transfer_website/app/scripts/transfersDAO.py",
+		"/Users/rubinghv/Prototypes/transfer_website/app/static/css/main.css",
+		"/Users/rubinghv/Prototypes/transfer_website/run_local.py",
+		"/Users/rubinghv/Prototypes/transfer_website/app/scripts/automatic_scrapping.p",
+		"/Users/rubinghv/Prototypes/transfer_website/app/scripts/playersDAO",
+		"/Users/rubinghv/Prototypes/transfer_website/app/scripts/article_analyzer.py",
+		"/Users/rubinghv/Prototypes/transfer_website/app/templates/transfer_entry.html",
+		"/Users/rubinghv/Desktop/temp_page.html",
+		"/Users/rubinghv/Prototypes/transfer_website/app/forms.py",
+		"/Users/rubinghv/Prototypes/transfer_website/app/templates/base.html",
+		"/Users/rubinghv/Prototypes/nltk/chapter1.py",
+		"/Users/rubinghv/Prototypes/transfer_website/scrapper.py",
+		"/Users/rubinghv/Downloads/Q3 (1).pl",
+		"/Users/rubinghv/Desktop/Q3.pl",
+		"/Users/rubinghv/Google Drive/UNSW/2015 - Semester 2/COMP4418 - Knowledge Representation/Assignment/01/Q3.pl",
+		"/Users/rubinghv/Prototypes/maps_timelapse/website/app/templates/base_no_article.html",
+		"/Users/rubinghv/Prototypes/maps_timelapse/website/app/templates/base.html",
+		"/Users/rubinghv/Prototypes/maps_timelapse/website/app/static/css/gallery.css",
+		"/Users/rubinghv/Prototypes/maps_timelapse/website/app/templates/login.html",
+		"/Users/rubinghv/Prototypes/maps_timelapse/polyline_encode_decode.py",
+		"/Users/rubinghv/Prototypes/maps_timelapse/website/app/templates/render.html",
+		"/Users/rubinghv/Prototypes/maps_timelapse/timelapse.py",
+		"/Users/rubinghv/Prototypes/maps_timelapse/website/app/render_video/timelapse.py",
+		"/Users/rubinghv/Prototypes/maps_timelapse/website/app/render_video/video_output/__init__.py ",
+		"/Users/rubinghv/Prototypes/maps_timelapse/app/templates/base.html",
+		"/Users/rubinghv/Prototypes/maps_timelapse/test.py",
+		"/Users/rubinghv/Prototypes/maps_timelapse/app/__init__.py",
+		"/Users/rubinghv/Prototypes/maps_timelapse/run.py",
+		"/Users/rubinghv/Prototypes/maps_timelapse/app/views.py",
+		"/Users/rubinghv/Prototypes/maps_timelapse/app/templates/index.html",
+		"/Users/rubinghv/Prototypes/maps_timelapse/config.py",
+		"/Users/rubinghv/Prototypes/maps_timelapse/app/forms.py",
+		"/Users/rubinghv/Prototypes/maps_timelapse/app/templates/login.html",
+		"/Users/rubinghv/Google Drive/Programming/NBA statistics/Python Code/scrapper.py",
+		"/Users/rubinghv/Prototypes/maps_timelapse/directions.xml",
+		"/Users/rubinghv/comp9041/ass2/15s2-comp2041-cgi/ass2/reset.pl",
+		"/Users/rubinghv/comp9041/ass2/15s2-comp2041-cgi/ass2/bitter_start.cgi",
+		"/Users/rubinghv/comp9041/ass2/15s2-comp2041-cgi/ass2/bitter.css",
+		"/Users/rubinghv/comp9041/ass1/shpy.pl",
+		"/Users/rubinghv/comp9041/ass2/15s2-comp2041-cgi/ass2/bitter.cgi",
+		"/Users/rubinghv/comp9041/ass2/bitter.cgi",
+		"/Users/rubinghv/Google Drive/UNSW/2015 - Semester 2/COMP4418 - Knowledge Representation/Assignment/02/clingo/files/robots.gdl",
+		"/Users/rubinghv/Google Drive/UNSW/2015 - Semester 2/COMP4418 - Knowledge Representation/Assignment/02/clingo/files/robotss.gdl.asp",
+		"/Users/rubinghv/Google Drive/UNSW/2015 - Semester 2/COMP4418 - Knowledge Representation/Assignment/02/clingo/files/buttons.asp",
+		"/Users/rubinghv/Google Drive/UNSW/2015 - Semester 2/COMP4418 - Knowledge Representation/Assignment/02/clingo/files/robots.asp",
+		"/Users/rubinghv/Google Drive/UNSW/2015 - Semester 2/COMP4418 - Knowledge Representation/Assignment/02/buttons.lp",
+		"/Users/rubinghv/Google Drive/Unity/AirportTycoon/AirportTycoon.sublime-project",
+		"/Users/rubinghv/Prototypes/MinFootball/MinFootball/MinFootball.sln",
+		"/Users/rubinghv/Google Drive/Unity/AirportTycoon/Assets/Scripts/Grid/GridHelper.cs",
+		"/Users/rubinghv/Google Drive/Unity/AirportTycoon/Assets/3D/Buildings/Old/offices.FBX",
+		"/Users/rubinghv/Google Drive/Unity/AirportTycoon/Assets/Plugins/Easy Save 2/Examples/Creating an Automatic Save Structure/UniqueObjectManager.cs",
+		"/Users/rubinghv/Google Drive/Unity/AirportTycoon/Assets/3D/Buildings/Old/Materials/No Name.mat",
+		"/Users/rubinghv/Google Drive/Unity/AirportTycoon/Assets/NGUI/Scripts/Editor/UIButtonMessageEditor.cs",
+		"/Users/rubinghv/Google Drive/Unity/AirportTycoon/Assets/NGUI/Scripts/Editor/NGUITransformInspector.cs",
+		"/Users/rubinghv/Google Drive/Unity/AirportTycoon/Assets/Standard Assets/Effects/ImageEffects/Shaders/Contrast Stretch/MinMaxReduction.shader",
+		"/Users/rubinghv/Google Drive/Unity/AirportTycoon/Assets/Scripts/Entity/GridObjects/Buildings/AreaBuildingFactory.cs",
+		"/Users/rubinghv/Google Drive/Unity/AirportTycoon/Assets/Scripts/UI/3D/AreaBuildPanel3D.cs",
+		"/Users/rubinghv/Google Drive/Unity/AirportTycoon/Assets/Scripts/Interface/MouseSelect/PlaceBuilding.cs",
+		"/Users/rubinghv/Google Drive/Unity/AirportTycoon/Assets/Scripts/UI/3D/BuildingBuildPanel3D.cs",
+		"/Users/rubinghv/Google Drive/Unity/AirportTycoon/Assets/Scripts/Grid/Grid.cs",
+		"/Users/rubinghv/Google Drive/Unity/AirportTycoon/Assets/Scripts/Interface/MouseSelect/PlaceAreaBuilding.cs",
+		"/Users/rubinghv/Library/Application Support/Sublime Text 3/Packages/User/JSON.sublime-settings",
+		"/Users/rubinghv/Google Drive/Unity/AirportTycoon/Library/ProjectSettings.asset",
+		"/Users/rubinghv/Google Drive/Unity/AirportTycoon/Assets/NGUI/Scripts/Internal/PropertyReference.cs",
+		"/Users/rubinghv/Google Drive/Unity/AirportTycoon/Assets/Plugins/Easy Save 2/Examples/Save and Load Prefabs Instantiated at Runtime/PrefabManager.cs",
+		"/Users/rubinghv/Google Drive/Unity/AirportTycoon/Assets/NGUI/Scripts/Editor/PropertyReferenceDrawer.cs",
+		"/Users/rubinghv/Google Drive/Unity/AirportTycoon/Assets/Plugins/Easy Save 2/readme.txt",
+		"/Users/rubinghv/Google Drive/Unity/AirportTycoon/Assets/Plugins/Easy Save 2/Examples/Upload and Download a Texture/Upload and Download a Texture.unity",
+		"/Users/rubinghv/Library/Application Support/Sublime Text 3/Packages/User/C#.sublime-settings",
+		"/Users/rubinghv/Google Drive/Unity/AirportTycoon/Assets/Scripts/AI/Person/Passenger.cs",
+		"/Users/rubinghv/Google Drive/Documents/Unity/Upgrade Backup/Sim/Backup/February/22/Assets/Scripts/Misc/BaggageBeltSiren.js",
+		"/Users/rubinghv/Google Drive/Documents/Unity/Upgrade Backup/Sim/Unity/Assets/Scripts/Controller/UIController.js",
+		"/Users/rubinghv/Google Drive/Documents/Unity/Sim/Unity/Assets/Scripts/UI/Panels/FlightsInfo/UIPanelFlightsInfo.js",
+		"/Users/rubinghv/Google Drive/Unity/Tycoon/TycoonGame/Assets/Scripts/Entity/GridObjects/GridObject.cs",
+		"/Users/rubinghv/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/rubinghv/Google Drive/Programming/NBA statistics/Python Code/process_data.py",
+		"/Applications/Unity/Documentation/html/en/StaticFilesManual/js/index_en.js",
+		"/Users/rubinghv/Google Drive/Unity/AirportSim/Assets/Scripts/Interface/MouseEvents/SelectGridCell.cs",
+		"/Users/rubinghv/Google Drive/Programming/NBA statistics/Python Code/entry.py",
+		"/Users/rubinghv/Google Drive/Programming/NBA statistics/Python Code/main_start"
+	],
+	"find":
+	{
+		"height": 30.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"loading-",
+			"load",
+			"get_transfer",
+			"jsonify",
+			"@application.route('/get_transfer_info', methods=['POST'])\ndef get_transfer_info():",
+			"parsing",
+			"random",
+			"yc",
+			"re.ma",
+			"rematch",
+			"word_toke",
+			"get_input",
+			"get_features(",
+			"get_featureset",
+			"match",
+			"complete",
+			"lines",
+			"re.m",
+			"split",
+			"sort",
+			"re.",
+			"export_articles_database_to_csv",
+			"send_file",
+			"settings-f",
+			"settings-for",
+			"input",
+			"get_all_ar",
+			"get_artic",
+			"PlayerD",
+			"TeamDT",
+			"TeamDt",
+			"search_",
+			"search_data",
+			"get_pagination_numbers",
+			"TeamDTO(",
+			"-light",
+			"300,400",
+			"button",
+			"admin",
+			"rubingh",
+			"rubinghv",
+			"hover",
+			"input",
+			"use up and down arrow keys to navigate",
+			"hover",
+			"#",
+			"input",
+			"autcomplet",
+			"popular-player",
+			"player-to-club",
+			"input",
+			"search",
+			"img",
+			"inline",
+			"nav",
+			": block",
+			"get_today",
+			"logo",
+			"image",
+			"\"GET\"",
+			"\"get\"",
+			"transfer-show",
+			"expand-grap",
+			"-button",
+			"a:",
+			" a",
+			"button",
+			"2196",
+			"288D1",
+			".pubDate",
+			"lambda",
+			".sort",
+			"graph-",
+			"gra-h-",
+			"blue",
+			"yellow",
+			"graph-",
+			"expand-g",
+			"expand-",
+			"-info-ex",
+			"table.",
+			"yellow",
+			"blue",
+			": blue",
+			"-expand-g",
+			"expand",
+			"table.",
+			"-expand-g",
+			"table.",
+			"-expand-gr",
+			"graph",
+			"player-to-club",
+			"expand",
+			"expand-le",
+			"-left",
+			"webkit",
+			"-info-ex",
+			"most_rumoured_transfer_graph",
+			"get_team",
+			"data",
+			"button",
+			"hover",
+			"background-col",
+			"entry-left",
+			"button",
+			"transfer-info",
+			"entry-right",
+			"right",
+			"popular",
+			"most",
+			"most rumour",
+			"most_rumoured",
+			"get_transfer",
+			"set ",
+			"set",
+			"previous-page",
+			"rumours articles",
+			"length =",
+			"length=",
+			"team-logo",
+			"footer",
+			"html",
+			"footer",
+			"application",
+			"applicatoin",
+			"render_te",
+			"form",
+			"direct"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"#8bc34a",
+			"'"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "flikr_fetch.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 612,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								544,
+								544
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 29.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.variable_get":
+	{
+		"height": 256.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "flickr_maps.sublime-project",
+	"replace":
+	{
+		"height": 56.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 476.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 280.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
