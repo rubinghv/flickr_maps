@@ -323,7 +323,7 @@
 			"file": "flikr_fetch.py",
 			"settings":
 			{
-				"buffer_size": 612,
+				"buffer_size": 7619,
 				"line_ending": "Unix"
 			}
 		}
@@ -722,21 +722,22 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 612,
+						"buffer_size": 7619,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								544,
-								544
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"auto_name": "",
-							"syntax": "Packages/Python/Python.sublime-syntax"
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

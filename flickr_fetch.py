@@ -61,7 +61,7 @@ def load_from_file(city):
 #   Also returns latitude and longitude in following format:
 #   (place_id, lat, lon)
 #
-def place_id(query):
+def get_place_id(query):
     json_item = flickr.places.find(query=query)
     if "places" in json_item:
         json_item = json_item['places']
@@ -120,7 +120,7 @@ def get_photos_from_place(place_id, latitude, longitude, days_back=30, debug=Tru
                     #    print("At page: " + str(page))
                     photo_dict = get_photos_from_place_page(place_id, latitude, longitude, start_timestamp, end_timestamp, page=page)
                     photos_dict = merge_two_dicts(photo_dict, photos_dict)
-                    print("after page " + str(page) + ", total size = " + str(len(photos_dict)))
+                    #print("after page " + str(page) + ", total size = " + str(len(photos_dict)))
 
             else:
                 print("Error: no results found and returned")
@@ -165,17 +165,20 @@ def print_json(json_item):
 #   For the given dictionary, attach location data by querying Flickr.
 #   Only look for location data if it is not already present
 #
-def get_all_photo_locations(photos_dict):
+def get_all_photo_locations(photos_dict, limit=1000):
     counter = 0
     for key, photo_dict in photos_dict.items():
+        if counter >= limit:
+            break
+
         if 'latitude' not in photo_dict:
-            print("getting location")
+            #print("getting location")
             get_photo_location(photo_dict)
             counter += 1
             if counter % 10 == 0:
                 print("Photo locations resolved = " + str(counter))
-        else:
-            print("location already there")
+        #else:
+        #    print("location already there")
 
     return photos_dict
 
@@ -205,32 +208,6 @@ def get_photo_location(photo_dict):
     
     return None
 
-
-#initialize_save_file()
-#first get place id
-#place_id, latitude, longitude = place_id("sydney")
-#photo_dict = get_photos_from_place(place_id, latitude, longitude, days_back=30)
-#print("dictionary = " + str(photo_dict))
-#save_to_file("sydney", photo_dict)
-
-
-
-photos_dict = load_from_file("sydney")
-print("photo list size = " + str(len(photos_dict)))
-with_location = 0
-for key, photo_dict in photos_dict.items():
-    if 'latitude' in photo_dict: 
-        with_location += 1 
-print("before with location = " + str(with_location))
-
-photos_dict = get_all_photo_locations(photos_dict)
-
-for key, photo_dict in photos_dict.items():
-    if 'latitude' in photo_dict: 
-        with_location += 1 
-print("after with location = " + str(with_location))
-
-#save_to_file("sydney", photos_dict)
 
 
 
