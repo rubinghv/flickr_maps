@@ -1,4 +1,6 @@
 from flickr_fetch import initialize_save_file, get_place_id, get_photos_from_place, save_to_file, load_from_file, get_all_photo_locations
+from visualization import create_map, plot_on_map, show_map
+
 #
 #	Get all the photos taken at a certain place over the 
 #	last days_back (from now to now - days_back)
@@ -25,7 +27,7 @@ def get_photos_location(place):
 	        with_location += 1 
 	print("before with location = " + str(with_location))
 
-	photos_dict = get_all_photo_locations(photos_dict)
+	photos_dict = get_all_photo_locations(photos_dict, place)
 
 	with_location = 0
 	for key, photo_dict in photos_dict.items():
@@ -40,13 +42,22 @@ def get_photos_location(place):
 #
 #	Export it so it can be printed here: http://www.darrinward.com/lat-long/
 #
-def print_location_data(place):
+def get_location_data(place):
 	photos_dict = load_from_file("sydney")
+
+	return_tuple_list = []
 	for key, photo_dict in photos_dict.items():
 		if 'latitude' in photo_dict: 
-			print(photo_dict['latitude'] + "," + photo_dict['longitude'])
+			return_tuple_list.append((photo_dict['latitude'], photo_dict['longitude']))
+
+	return return_tuple_list
 
 #get_photos("sydney", 30, True)
-get_photos_location("sydney")
+#get_photos_location("sydney")
 
-
+location_data = get_location_data("sydney")
+#print(str(location_data))
+map = create_map()
+for lat, lon in location_data:
+	plot_on_map(map, float(lat), float(lon))
+show_map()

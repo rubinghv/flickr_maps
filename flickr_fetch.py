@@ -1,7 +1,6 @@
 import flickrapi
-import json
-import pickle
-import datetime, calendar
+import json, pickle, datetime, time, calendar
+import threading
 from progress.bar import Bar
 
 save_file = "photos_db.p"
@@ -171,8 +170,11 @@ def print_json(json_item):
 #   For the given dictionary, attach location data by querying Flickr.
 #   Only look for location data if it is not already present
 #
-def get_all_photo_locations(photos_dict, limit=1000):
+#   Save to file every 10 items
+#
+def get_all_photo_locations(photos_dict, city_name, limit=1000, thread_count=20):
     counter = 0
+    threads = []
     bar = Bar('Fetching locations', suffix='%(percent)d%%  -  Time remaining: %(eta)ds', max=limit)
 
     for key, photo_dict in photos_dict.items():
@@ -180,17 +182,36 @@ def get_all_photo_locations(photos_dict, limit=1000):
             break
 
         if 'latitude' not in photo_dict:
-            #print("getting location")
-            get_photo_location(photo_dict)
+            if thread_count == 1:
+                get_photo_location(photo_dict)
+            else:
+                threads.append(start_thread(get_photo_location, (photo_dict,), thread_count))
+
             counter += 1
             bar.next()
-            #if counter % 10 == 0:
-                #print("Photo locations resolved = " + str(counter))
-        #else:
+            if counter % 10 == 0:
+                save_to_file(city_name, photos_dict)
+        #else:  
         #    print("location already there")
+
+    #join threads back before continuing
+    for thread in threads:  
+        thread.join()
 
     bar.finish()
     return photos_dict
+
+
+def start_thread(function, arguments, max_threads):
+    if threading.activeCount() < max_threads:
+
+        t = threading.Thread(target=function, args = arguments)
+        t.daemon = True
+        t.start()
+        return t
+    else:
+        time.sleep(0.05)
+        return start_thread(function, arguments, max_threads)
 
 #
 #   Get the longitude and latitude given a photo_id
