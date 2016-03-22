@@ -13,7 +13,8 @@ def get_photos(place, days_back=30, reset_save_file=False):
 
 
 #
-#
+#	Load photo information from the database and add the location
+#	to photos that are missing that data
 #
 def get_photos_location(place):
 	photos_dict = load_from_file(place)
@@ -36,11 +37,16 @@ def get_photos_location(place):
 
 
 
+#
+#	Export it so it can be printed here: http://www.darrinward.com/lat-long/
+#
+def print_location_data(place)
+	photos_dict = load_from_file("sydney")
+	for key, photo_dict in photos_dict.items():
+		if 'latitude' in photo_dict: 
+			print(photo_dict['latitude'] + "," + photo_dict['longitude'])
 
 #get_photos("sydney", 30, True)
 #get_photos_location("sydney")
 
-photos_dict = load_from_file(place)
-for key, photo_dict in photos_dict.items():
-	if 'latitude' in photo_dict: 
-		print(photo_dict['latitude'] + "," + photo_dict['longitude'])
+
