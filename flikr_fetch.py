@@ -1,6 +1,7 @@
 import flickrapi
 import json
 import pickle
+import datetime, calendar
 
 save_file = "photos_db.p"
 
@@ -9,22 +10,31 @@ api_secret = u'cc5f4efa2cfb491e'
 
 flickr = flickrapi.FlickrAPI(api_key, api_secret, format='parsed-json')
 
+def merge_two_dicts(original, added):
+    return_dict = original.copy()
+    #print("merge size before = " + str(len(return_dict)))
+    for key, value in added.items():
+        if key not in return_dict:
+            return_dict[key] = value
+    #print("merge size after = " + str(len(return_dict)))
+    return return_dict
+
 def initialize_save_file():
     pickle_dictionary = {"enabled" : True}
     with open(save_file, "wb") as f:
         pickle.dump(pickle_dictionary, f)
 
 #
-#   Save a list of photo data to the save_file
-#   Items in the list are tuples of the form (id, owner)
+#   Save a dictionary of photo data to the save_file
+#   Items in the dictionary use id as their key
 #
-def save_to_file(city, photo_list):
+def save_to_file(city_name, city_dict):
     pickle_dictionary = None
     with open(save_file, "rb") as f:
         pickle_dictionary = pickle.load(f)
 
     with open(save_file, "wb") as f:
-        pickle_dictionary[city] = photo_list
+        pickle_dictionary[city_name] = city_dict
         pickle.dump(pickle_dictionary, f)
 
 
@@ -73,41 +83,69 @@ def place_id(query):
 #
 #   Get all photos from a certain place_id, latitude, and longitude
 #
-def get_photos_from_place(place_id, latitude, longitude, debug=True):
-    json_item = flickr.photos.search(lat=latitude,lon=longitude, place_id=place_id,
-                                     accuracy=12, 
-                                     per_page=500)
+#   However number of photos returned is limited to 1500, so limit time frame to constrain that
+#
+def get_photos_from_place(place_id, latitude, longitude, days_back=30, debug=True):
+    photos_dict = {}
 
-    # first check total number of results
-    if "photos" in json_item:
-        json_item = json_item['photos']
-        if int(json_item['total']) > int(json_item['perpage']):
-            total_pages = json_item['pages']
-            print("multiple pages (" + str(total_pages) + ")")
-            return get_photos_from_place_page(place_id, latitude, longitude)
+    day_interval = 1
+    today_date = datetime.datetime.utcnow()
+    start_date = today_date
+    
+    for day in range(1, days_back + 1):
+        # update date and timestamps
+        end_date = start_date
+        start_date = start_date - datetime.timedelta(days=day_interval)
+
+        end_timestamp = calendar.timegm(end_date.timetuple())
+        start_timestamp = calendar.timegm(start_date.timetuple())
+
+        json_item = flickr.photos.search(lat=latitude,lon=longitude, place_id=place_id,
+                                         accuracy=12, 
+                                         per_page=250,
+                                         min_upload_date=start_timestamp,
+                                         max_upload_date=end_timestamp)
+
+        # first check total number of results
+        if "photos" in json_item:
+            json_item = json_item['photos']
+            if int(json_item['total']) > 0:
+                total_pages = json_item['pages']
+                print("total results for date (" + str(start_date) + ") = " + str(json_item['total']))
+                #print("multiple pages (" + str(total_pages) + ")")
+                #print ("perpage = " + str(json_item['perpage']))
+
+                for page in range(1, total_pages + 1):
+                    #if page % 10 == 0:
+                    #    print("At page: " + str(page))
+                    photo_dict = get_photos_from_place_page(place_id, latitude, longitude, start_timestamp, end_timestamp, page=page)
+                    photos_dict = merge_two_dicts(photo_dict, photos_dict)
+                    print("after page " + str(page) + ", total size = " + str(len(photos_dict)))
+
+            else:
+                print("Error: no results found and returned")
+
         else:
-            print("Error: only one page returned, need more to create map")
-        if debug: print ("perpage = " + str(json_item['perpage']))
+            print("Error: could not resolve JSON")
 
-    else:
-        print("Error: could not resolve JSON")
-
-    return None
+    return photos_dict
 
 
-def get_photos_from_place_page(place_id, latitude, longitude, page=1, debug=True):  
+def get_photos_from_place_page(place_id, latitude, longitude, start_timestamp, end_timestamp, page=1, debug=True):  
     json_item = flickr.photos.search(lat=latitude,lon=longitude, place_id=place_id,
                                      accuracy=12, 
-                                     per_page=500,
-                                     page=page)    
-    photo_list = []
+                                     per_page=250,
+                                     page=page,
+                                     min_upload_date=start_timestamp,
+                                     max_upload_date=end_timestamp)
+    photo_dict = {}
 
     if "photos" in json_item:
         photos = json_item['photos']
         for photo in photos['photo']:
-            photo_list.append((photo['id'], photo['owner']))
-        #print(str(photo_list))
-        return photo_list
+            if photo['id'] not in photo_dict:
+                photo_dict[photo['id']] = { photo['id'], photo['owner'] }
+        return photo_dict
     else:
         print("Error: could not resolve JSON")
         return None
@@ -117,13 +155,36 @@ def print_json(json_item):
     print(json.dumps(json_item, indent=4))
 
 
+initialize_save_file()
 #first get place id
-#place_id, latitude, longitude = place_id("sydney")
+place_id, latitude, longitude = place_id("sydney")
 #print("place = " + str(place_id) + ", (lat, lon) = (" + str(latitude) + ", " + str(longitude) + ")")
-#photo_list = get_photos_from_place(place_id, latitude, longitude)
+photo_dict = get_photos_from_place(place_id, latitude, longitude, days_back=30)
+print("photo list size = " + str(len(photo_dict)))
+#print("dictionary = " + str(photo_dict))
+save_to_file("sydney", photo_dict)
 
-#save_to_file("sydney", photo_list)
-photo_list = load_from_file("sydney")
-print("photo_list = " + str(photo_list))
+
+
+
+
+
+
+
+
+
+# photo_list = load_from_file("sydney")
+# new_list = []
+# photo_dict = {}
+# for id, owner in photo_list:
+#     new_list.append(id)
+#     if id not in photo_dict:
+#         photo_dict[id] = { 'id' : id, 'owner': owner}
+
+
+# print("duplicates = " + str(duplicates))
+# print("photo list = " + str(new_list[:100]))
+
+# print("photo_list size= " + str(len(new_list)))
 
 
