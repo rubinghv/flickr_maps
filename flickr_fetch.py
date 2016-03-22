@@ -2,6 +2,7 @@ import flickrapi
 import json
 import pickle
 import datetime, calendar
+from progress.bar import Bar
 
 save_file = "photos_db.p"
 
@@ -92,6 +93,8 @@ def get_photos_from_place(place_id, latitude, longitude, days_back=30, debug=Tru
     today_date = datetime.datetime.utcnow()
     start_date = today_date
     
+    bar = Bar('Fetching photos info', suffix='%(percent)d%%  -  Time remaining: %(eta)ds', max=days_back)
+
     for day in range(1, days_back + 1):
         # update date and timestamps
         end_date = start_date
@@ -111,7 +114,7 @@ def get_photos_from_place(place_id, latitude, longitude, days_back=30, debug=Tru
             json_item = json_item['photos']
             if int(json_item['total']) > 0:
                 total_pages = json_item['pages']
-                print("total results for date (" + str(start_date) + ") = " + str(json_item['total']))
+                #print("total results for date (" + str(start_date) + ") = " + str(json_item['total']))
                 #print("multiple pages (" + str(total_pages) + ")")
                 #print ("perpage = " + str(json_item['perpage']))
 
@@ -128,6 +131,9 @@ def get_photos_from_place(place_id, latitude, longitude, days_back=30, debug=Tru
         else:
             print("Error: could not resolve JSON")
 
+        bar.next()
+
+    bar.finish()
     return photos_dict
 
 #
@@ -167,6 +173,8 @@ def print_json(json_item):
 #
 def get_all_photo_locations(photos_dict, limit=1000):
     counter = 0
+    bar = Bar('Fetching locations', suffix='%(percent)d%%  -  Time remaining: %(eta)ds', max=limit)
+
     for key, photo_dict in photos_dict.items():
         if counter >= limit:
             break
@@ -175,11 +183,13 @@ def get_all_photo_locations(photos_dict, limit=1000):
             #print("getting location")
             get_photo_location(photo_dict)
             counter += 1
-            if counter % 10 == 0:
-                print("Photo locations resolved = " + str(counter))
+            bar.next()
+            #if counter % 10 == 0:
+                #print("Photo locations resolved = " + str(counter))
         #else:
         #    print("location already there")
 
+    bar.finish()
     return photos_dict
 
 #
