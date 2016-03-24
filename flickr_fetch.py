@@ -4,6 +4,7 @@ import threading
 from progress.bar import Bar
 
 save_file = "photos_db.p"
+save_directory = "cities/"
 
 api_key = u'736c046ac91ed5f2fe5330642e4b2db1'
 api_secret = u'cc5f4efa2cfb491e'
@@ -19,9 +20,11 @@ def merge_two_dicts(original, added):
     #print("merge size after = " + str(len(return_dict)))
     return return_dict
 
-def initialize_save_file():
-    pickle_dictionary = {"enabled" : True}
-    with open(save_file, "wb") as f:
+def initialize_save_file(city_name):
+    pickle_dictionary = {}
+    filename = save_directory + city_name + ".p"
+
+    with open(filename, "wb") as f:
         pickle.dump(pickle_dictionary, f)
 
 #
@@ -30,11 +33,18 @@ def initialize_save_file():
 #
 def save_to_file(city_name, city_dict):
     pickle_dictionary = None
-    with open(save_file, "rb") as f:
-        pickle_dictionary = pickle.load(f)
+    filename = save_directory + city_name + ".p"
 
-    with open(save_file, "wb") as f:
-        pickle_dictionary[city_name] = city_dict
+    try:
+        with open(filename, "rb") as f:
+            pickle_dictionary = pickle.load(f)
+    except FileNotFoundError:
+        # file does not exist yet, create first
+        initialize_save_file(city_name)
+
+
+    with open(filename, "wb") as f:
+        pickle_dictionary = city_dict
         pickle.dump(pickle_dictionary, f)
 
 
@@ -44,8 +54,13 @@ def save_to_file(city_name, city_dict):
 #
 def load_from_file(city):
     pickle_dictionary = None
-    with open(save_file, "rb") as f:
-        pickle_dictionary = pickle.load(f)
+    filename = save_directory + city_name + ".p"
+
+    try:
+        with open(filename, "rb") as f:
+            pickle_dictionary = pickle.load(f)
+    except FileNotFoundError:
+        print("Error: filename (" + filename + ") not found.")
 
     if pickle_dictionary is not None:
         if city in pickle_dictionary:
@@ -85,12 +100,11 @@ def get_place_id(query):
 #
 #   However number of photos returned is limited to 1500, so limit time frame to constrain that
 #
-def get_photos_from_place(place_id, latitude, longitude, days_back=30, debug=True):
-    photos_dict = {}
+def get_photos_from_place(place_id, latitude, longitude, photos_dict, start_day=0, days_back=30, thread_count=10, debug=True):
 
     day_interval = 1
-    today_date = datetime.datetime.utcnow()
-    start_date = today_date
+    today_date = datetime.datetime.utcnow() 
+    start_date = today_date - datetime.timedelta(days=start_day)
     
     bar = Bar('Fetching photos info', suffix='%(percent)d%%  -  Time remaining: %(eta)ds', max=days_back)
 

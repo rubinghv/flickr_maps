@@ -1,6 +1,8 @@
 from mpl_toolkits.basemap import Basemap
 import matplotlib.pyplot as plt
 import numpy as np
+import math
+import pyproj
 
 #
 #	Create a Basemap and return it
@@ -11,35 +13,41 @@ def create_map():
 	upper_right_lat = -33.751265
 	upper_right_lon = 151.425672
 
-	# map = Basemap(projection='merc', lat_0 = 57, lon_0 = -135,
-	#     resolution = 'h', area_thresh = 0.1,
-	#     llcrnrlon=-136.25, llcrnrlat=56.0,
-	#     urcrnrlon=-134.25, urcrnrlat=57.75)
 
-	map = Basemap(projection='merc',
+	bmap = Basemap(#projection='merc',
 				  llcrnrlat=lower_left_lat,
 				  urcrnrlat=upper_right_lat,
 	              llcrnrlon=lower_left_lon,
 	              urcrnrlon=upper_right_lon,
-	              resolution='f')
+	              resolution='f')#,
+	             # epsg=3857)
 
-	map.drawcoastlines()
-	map.drawcountries()
-	map.fillcontinents(lake_color='aqua')
-	map.drawmapboundary()
+	bmap.drawcoastlines()
+	bmap.drawcountries()
+	bmap.fillcontinents(lake_color='aqua')
+	bmap.drawmapboundary()
 
-	return map
+	return bmap
 
 #
 #	Plot coordinates lat, lon on the Basemap map
 #
-def plot_on_map(map, lat, lon):
-	x,y = map(lon, lat)
-	map.plot(x, y, 'bo', markersize=3)
+def plot_on_map(bmap, lat, lon):
+	#gda94 = pyproj.Proj(init='epsg:4283')
+	#mgaz56 = pyproj.Proj(init='epsg:4326')
+	#x, y = pyproj.transform(gda94, mgaz56, lon, lat)
+
+	x,y = bmap(lon, lat)
+	bmap.plot(x, y, 'bo', markersize=1)
 
 def show_map():
 	plt.show()
 
+#mgi = -34.00314109942555, 151.2523551179208
+
 # map = create_map()
-# plot_on_map(map, -33.902407, 151.228862)
+# plot_on_map(map, -34.002055, 151.248885)
 # show_map()
+
+
+
