@@ -65,13 +65,26 @@ def get_location_data(place):
 #
 #
 #
-photos_dict = load_from_file("sydney")
-save_to_file("sydney", photos_dict)
+def get_city_data(city_name):
+	# first get the picture data for the past year
+	get_photos(city_name, start_day=0, days_back=360)
+
+	first_loop = True
+	minutes_to_sleep = 1
+
+	while True:
+		if first_loop: 
+			get_photos_location(city_name, limit=2500)
+		else: 
+			get_photos_location(city_name, limit=3500)
+
+		print("going to sleep for " + str(minutes_to_sleep + " minutes"))
+		sleep(minutes_to_sleep * 60)
+		print("resuming after sleep")
+
+		first_loop = False
 
 
-
-#get_photos("sydney", start_day=60, days_back=30)
-#get_photos_location("sydney", limit=3000)
 
 
 # location_data = get_location_data("sydney")

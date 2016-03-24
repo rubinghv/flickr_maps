@@ -52,10 +52,9 @@ def save_to_file(city_name, city_dict):
 #   Load and return a list of photo data from the save_file
 #   Items in the list are tuples of the form (id, owner)
 #
-def load_from_file(city):
+def load_from_file(city_name):
     pickle_dictionary = None
     filename = save_directory + city_name + ".p"
-
     try:
         with open(filename, "rb") as f:
             pickle_dictionary = pickle.load(f)
@@ -63,11 +62,10 @@ def load_from_file(city):
         print("Error: filename (" + filename + ") not found.")
 
     if pickle_dictionary is not None:
-        if city in pickle_dictionary:
-            return pickle_dictionary[city]
-
-    print("Error: could not load city from file")
-    return None
+        return pickle_dictionary
+    else: 
+        print("Error: could not load city from file")
+        return None
 
 #
 #   Get the place id for any given query
