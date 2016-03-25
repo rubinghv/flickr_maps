@@ -59,7 +59,8 @@ def load_from_file(city_name):
         with open(filename, "rb") as f:
             pickle_dictionary = pickle.load(f)
     except FileNotFoundError:
-        print("Error: filename (" + filename + ") not found.")
+        print("Warning: filename (" + filename + ") not found. Returning empty dictionary")
+        return {}
 
     if pickle_dictionary is not None:
         return pickle_dictionary
