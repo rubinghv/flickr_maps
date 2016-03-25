@@ -1,8 +1,9 @@
 import sys
 from time import sleep
+from datetime import datetime, timedelta
 
 from flickr_fetch import initialize_save_file, get_place_id, get_photos_from_place, save_to_file, load_from_file, get_all_photo_locations
-from visualization import create_map, plot_on_map, show_map
+#from visualization import create_map, plot_on_map, show_map
 
 #
 #	Get all the photos taken at a certain place over the 
@@ -25,24 +26,29 @@ def get_photos(place, start_day=0, days_back=30):
 #
 def get_photos_location(place, limit=1000):
 	photos_dict = load_from_file(place)
-	print("total photos in db = " + str(len(photos_dict)))
+
 	with_location = 0
 	for key, photo_dict in photos_dict.items():
 	    if 'latitude' in photo_dict: 
 	        with_location += 1 
-	print("before with location = " + str(with_location))
 
+
+	print("before: total photos (with location) = " + str(len(photos_dict)) + " (" + str(with_location) + ")")
 	photos_dict = get_all_photo_locations(photos_dict, place, limit=limit)
 
 	with_location = 0
 	for key, photo_dict in photos_dict.items():
 	    if 'latitude' in photo_dict: 
 	        with_location += 1 
-	print("after with location = " + str(with_location))
+	print("after: total photos (with location) = " + str(len(photos_dict)) + " (" + str(with_location) + ")")
 
 	save_to_file(place, photos_dict)
-
-
+	
+	if len(photos_dict) - with_location < 1:
+		print("Got all locations")
+		return True
+	else:
+		return False
 
 #
 #	Export it so it can be printed here: http://www.darrinward.com/lat-long/
@@ -68,18 +74,23 @@ def get_city_data(city_name):
 
 
 	# first get the picture data for the past year
-	get_photos(city_name, start_day=0, days_back=5)
+	get_photos(city_name, start_day=0, days_back=360)
 
 	first_loop = True
-	minutes_to_sleep = 1
+	minutes_to_sleep = 60
 
 	while True:
 		if first_loop: 
-			get_photos_location(city_name, limit=100)
-		else: 
-			get_photos_location(city_name, limit=100)
+			limit = 2000
+		else:
+			limit = 3200
 
-		print("going to sleep for " + str(minutes_to_sleep) + " minutes")
+
+		if get_photos_location(city_name, limit=limit):
+			print("Photo info and locations complete, exiting.")
+			return
+
+		print("going to sleep for " + str(minutes_to_sleep) + " minutes at " + str(datetime.now()))
 		sleep(minutes_to_sleep * 60)
 		print("resuming after sleep")
 
